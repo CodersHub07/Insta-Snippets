@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=Kodchasan");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #232323;
+}
+
+* {
+  font-family: "Kodchasan";
+}
+
+.switch input[type="checkbox"] {
+  display: none;
+}
+.switch input[type="checkbox"]:checked + label {
+  border-color: #4d7c99;
+}
+.switch input[type="checkbox"]:checked + label:before {
+  content: "Vampire";
+  color: #4d7c99;
+  font-size: 50px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 25%;
+  transform: translateX(-25%);
+  line-height: 190px;
+  transition: 0.5s ease;
+  z-index: 0;
+}
+.switch input[type="checkbox"]:checked + label .pumpkin-container {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.switch input[type="checkbox"]:checked + label .vampire-container {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+  opacity: 1;
+}
+.switch label {
+  border: 3px solid #e56d48;
+  cursor: pointer;
+  height: 200px;
+  border-radius: 200px;
+  display: flex;
+  width: 600px;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+.switch label:before {
+  content: "Pumpkin";
+  color: #e56d48;
+  font-size: 50px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 70%;
+  transform: translateX(-70%);
+  line-height: 190px;
+  transition: 0.5s ease;
+  z-index: 0;
+}
+.switch label .pumpkin-container {
+  background: #e56d48;
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  border-radius: 190px;
+  left: 5px;
+  top: 5px;
+  overflow: hidden;
+  transition: 0.5s ease;
+  opacity: 1;
+}
+.switch label .pumpkin-container .eyes-n-nose {
+  background: #330a0f;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 16px 32px 16px;
+  border-color: #e56d48 #e56d48 #330a0f #e56d48;
+}
+.switch label .pumpkin-container .eyes-n-nose:before,
+.switch label .pumpkin-container .eyes-n-nose:after {
+  content: "";
+  background: #330a0f;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 10px;
+  left: 0;
+}
+.switch label .pumpkin-container .eyes-n-nose:before {
+  margin-left: -65px;
+}
+.switch label .pumpkin-container .eyes-n-nose:after {
+  margin-left: 45px;
+}
+.switch label .pumpkin-container .mouth-n-teeths {
+  height: 65px;
+  width: 130px;
+  background: #330a0f;
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  border-bottom-left-radius: 130px;
+  border-bottom-right-radius: 130px;
+}
+.switch label .pumpkin-container .mouth-n-teeths:before,
+.switch label .pumpkin-container .mouth-n-teeths:after {
+  content: "";
+  position: absolute;
+  background: #e56d48;
+  height: 15px;
+  width: 20px;
+}
+.switch label .pumpkin-container .mouth-n-teeths:before {
+  left: 25px;
+  top: -1px;
+}
+.switch label .pumpkin-container .mouth-n-teeths:after {
+  right: 25px;
+  bottom: 0;
+  height: 20px;
+}
+.switch label .vampire-container {
+  background: #4d7c99;
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  border-radius: 190px;
+  left: 5px;
+  top: 5px;
+  overflow: hidden;
+  transition: 0.5s ease;
+  opacity: 0;
+}
+.switch label .vampire-container:before,
+.switch label .vampire-container:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #c2def2;
+  border-radius: 45% 45% 0 0;
+  top: 15px;
+}
+.switch label .vampire-container:before {
+  left: -80px;
+}
+.switch label .vampire-container:after {
+  right: -80px;
+}
+.switch label .vampire-container .eyes {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+  z-index: 1;
+}
+.switch label .vampire-container .eyes:before,
+.switch label .vampire-container .eyes:after {
+  content: "";
+  background: #d63e49;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+}
+.switch label .vampire-container .eyes:before {
+  margin-left: -65px;
+}
+.switch label .vampire-container .eyes:after {
+  margin-left: 45px;
+}
+.switch label .vampire-container .mouth {
+  height: 65px;
+  width: 130px;
+  background: #330a0f;
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  border-bottom-left-radius: 130px;
+  border-bottom-right-radius: 130px;
+  overflow: hidden;
+  z-index: 1;
+}
+.switch label .vampire-container .mouth .teeths {
+  background: #fffae6;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: -1px;
+  height: 20px;
+}
+.switch label .vampire-container .mouth .teeths:before,
+.switch label .vampire-container .mouth .teeths:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 7.5px 0 7.5px;
+  border-color: #fffae6 transparent transparent transparent;
+  top: 19px;
+}
+.switch label .vampire-container .mouth .teeths:before {
+  left: 20px;
+}
+.switch label .vampire-container .mouth .teeths:after {
+  right: 20px;
+}
+.switch label .vampire-container .mouth .tongue {
+  height: 35px;
+  width: 70px;
+  background: #d63e49;
+  bottom: -15px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+}
+
+@keyframes pseudo-move {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
